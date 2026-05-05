@@ -1,0 +1,19 @@
+# AI SMS Middleware
+
+A backend system that integrates SMS/Voice workflows with AI processing.
+
+## Features
+- Twilio webhook integration (SMS)
+- AI-powered intent extraction
+- PostgreSQL audit logging
+- Secure data handling (masking, env configs)
+
+## Tech Stack
+- Node.js (Express)
+- OpenAI API
+- PostgreSQL (Prisma)
+
+## Run locally
+cp .env.example .env
+npm install
+npm run dev
