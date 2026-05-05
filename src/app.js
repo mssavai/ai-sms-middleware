@@ -5,8 +5,19 @@ import requestLogger from './shared/middleware/requestLogger.js';
 
 const app = express();
 
+/**
+ * Capture raw body for Twilio validation
+ */
+app.use(
+  express.urlencoded({
+    extended: true,
+    verify: (req, res, buf) => {
+      req.rawBody = buf.toString();
+    },
+  })
+);
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 
